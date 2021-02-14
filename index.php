@@ -1,3 +1,10 @@
+<?php
+if (isset($_POST['submit'])) {
+    //     // validate entries
+    echo 'form submitted';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +24,8 @@
         <div class="contact-box">
             <div class="contact-left">
                 <h3>Send your Request</h3>
-                <form action="" method="POST">
+
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name</label>
@@ -25,23 +33,25 @@
                         </div>
                         <div class="input-group">
                             <label>phone</label>
-                            <input type="text" placeholder="+233 554694601">
+                            <input type="text" name="phone" placeholder="+233 554694601">
                         </div>
                     </div>
                     <div class="input-row">
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" name="email" placeholder="johnprank@gmail.com" autocomplete="on">
+                            <input type="email" name="email" placeholder="johnprank@gmail.com" autocomplete="on">
                         </div>
                         <div class="input-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Product demo">
+                            <input type="text" name="subject" placeholder="Product demo">
                         </div>
                     </div>
                     <label>Message</label>
-                    <textarea rows="5" placeholder="your message"></textarea>
+                    <textarea rows="5" name="message" placeholder="your message"></textarea>
+                    <!-- <input type="submit" value="submit" name="submit"> -->
+                    <button value='submit' name='submit'>Send</button>
                 </form>
-                <button type="submit" value="submit " name="submit">SEND</button>
+                <!-- <button value="submit " name="submit">SEND</button> -->
 
             </div>
             <div class="contact-right">
